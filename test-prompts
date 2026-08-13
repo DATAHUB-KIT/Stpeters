@@ -13,5 +13,37 @@ faq = {
 }
 ###########################################################################3
 
+from transformers import BlenderbotTokenizer, BlenderbotForConditionalGeneration
 
+# Load pre-trained model and tokenizer
+model_name = "facebook/blenderbot-400M-distill"
+tokenizer = BlenderbotTokenizer.from_pretrained(model_name)
+model = BlenderbotForConditionalGeneration.from_pretrained(model_name)
+
+
+def college_admission_chat():
+    print("Welcome to the College Admission Chatbot! ")
+
+    while True:
+        user_input = input("You: ").lower()
+
+        if user_input in faq:
+            print(f"Chatbot: {faq[user_input]}")
+            continue
+        elif user_input not in faq:
+            inputs = tokenizer(user_input, return_tensors="pt")
+            reply_ids = model.generate(**inputs)
+            response = tokenizer.decode(reply_ids[0], skip_special_tokens=True)
+            print(f"Chatbot: {response}")
+            continue
+
+        if user_input == "exit":
+            print("Chatbot: Thank you for reaching out! Have a great day!")
+            break
+
+
+
+
+# Start the chatbot
+college_admission_chat()
 

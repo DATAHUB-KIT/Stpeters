@@ -9,3 +9,11 @@ client=genai.Client(api_key=GEMINI_API_KEY)
 ##############################################3
 https://www.rmofspringfield.ca/p/meeting-audio-files
 #######################################################3
+from google.colab import files
+
+uploaded = files.upload()
+
+audio_file = list(uploaded.keys())[0]
+
+print(audio_file)
+###########################################

@@ -57,3 +57,30 @@ print("Resume Loaded Successfully")
 print("-"*50)
 print(resume_text[:1500])
 ###############################################
+prompt = f"""
+You are an experienced HR Manager, Career Coach and Technical Recruiter.
+
+Analyze the following resume carefully.
+
+Resume:
+
+{resume_text}
+
+Generate a detailed report.
+
+Include the following sections.
+
+# Candidate Summary
+
+# Education
+
+# Experience Level
+
+# Technical Skills
+
+# Suitable IT Job Categories
+
+# Overall Resume Score (100)
+
+Format the response in clean Markdown.
+"""

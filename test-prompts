@@ -7,3 +7,5 @@ client=genai.Client(api_key=GEMINI_API_KEY)
 #!pip install -q google-genai
 !apt-get -qq install ffmpeg
 ##############################################3
+https://www.rmofspringfield.ca/p/meeting-audio-files
+#######################################################3

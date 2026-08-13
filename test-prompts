@@ -1,17 +1,19 @@
-prompt = """
-QUERY: provide a list of atheletes that competed in olympics exactly 9 times.
-CONTEXT:
+!pip install groq
+#######################################################3
+from groq import Groq
+from google.colab import userdata
 
-Table title: Olympic athletes and number of times they've competed
-Ian Millar, 10
-Hubert Raudaschl, 9
-Afanasijs Kuzmins, 9
-Nino Salukvadze, 9
-Piero d'Inzeo, 8
-Raimondo d'Inzeo, 8
-Claudia Pechstein, 8
-Jaqueline Mourão, 8
-Ivan Osiier, 7
-François Lafortune, Jr, 7
+grokclient = Groq(
+    groq_api_key=userdata.get("grok2")
+)
 
-"""
+#########################################33
+response = client.chat.completions.create(
+    model="llama-3.3-70b-versatile",
+    messages=[
+        {"role": "user", "content": "Hi"}
+    ]
+)
+
+print(response.choices[0].message.content)
+###########################################################################3

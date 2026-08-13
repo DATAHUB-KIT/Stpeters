@@ -84,3 +84,6 @@ Include the following sections.
 
 Format the response in clean Markdown.
 """
+###############################################################
+model_name = "nlptown/bert-base-multilingual-uncased-sentiment"
+####################################################################

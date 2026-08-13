@@ -40,3 +40,20 @@ response = client.models.generate_content(
 
 print(response.text)
 ######################################################
+gemini resume screening
+##############################################
+uploaded = files.upload()
+###################################3
+filename = list(uploaded.keys())[0]
+
+doc = fitz.open(filename)
+
+resume_text = ""
+
+for page in doc:
+    resume_text += page.get_text()
+
+print("Resume Loaded Successfully")
+print("-"*50)
+print(resume_text[:1500])
+###############################################

@@ -24,3 +24,19 @@ img = Image.open(image_path)
 
 display(img)
 ##################################################
+prompt = """
+Analyze this image carefully.
+
+Provide:
+1. What is present in the image
+2. A detailed description
+
+"""
+
+response = client.models.generate_content(
+    model="gemini-3.5-flash",
+    contents=[img, prompt]
+)
+
+print(response.text)
+######################################################

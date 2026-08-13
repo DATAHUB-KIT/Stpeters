@@ -1,69 +1,9 @@
-pipe=DiffusionPipeline.from_pretrained ("stabilityai/stable-diffusion-xl-base-1.0",  torch_dtype=torch.float16,  use_safetensors=True,  variant="fp16")
-pipe.to("cuda")
-########################################################
-prompt="happy monkey"
-#############################################################3
-images=pipe(prompt=prompt,
-            num_inference_steps=100,
-            guidance_scale=9).images[0]
-images
-###################################333
-google /sales force vission models
-###############################################3
-from transformers import ViTImageProcessor, ViTForImageClassification
-from PIL import Image
-import requests
-
-# Load pre-trained mod-el
-processor = ViTImageProcessor.from_pretrained("google/vit-base-patch16-224")
-model = ViTForImageClassification.from_pretrained("google/vit-base-patch16-224")]
-######################################################################################
-url = "https://images.unsplash.com/photo-1517849845537-4d257902454a?w=500"
-
-image = Image.open(requests.get(url, stream=True).raw)
-image
-##########################################################################
-inputs = processor(images=image, return_tensors="pt")
-
-outputs = model(**inputs)
-
-logits = outputs.logits
-
-predicted_class = logits.argmax(-1).item()
-
-print("Predicted Class:")
-print(model.config.id2label[predicted_class])
-##################################################################3
-sales force eblib model
-##########################################################33
-from google.colab import files
-from PIL import Image
-
-uploaded = files.upload()
-
-image = Image.open(list(uploaded.keys())[0]).convert("RGB")
-
-image
-##################################################################################
-from transformers import BlipProcessor
-from transformers import BlipForConditionalGeneration
-
-processor = BlipProcessor.from_pretrained(
-    "Salesforce/blip-image-captioning-base"
-)
-
-model = BlipForConditionalGeneration.from_pretrained(
-    "Salesforce/blip-image-captioning-base"
-)
-
-inputs = processor(image, return_tensors="pt")
-
-out = model.generate(**inputs)
-
-caption = processor.decode(out[0], skip_special_tokens=True)
-
-print(caption)
-########################################################################3
+from transformers import BlenderbotTokenizer,BlenderbotForConditionalGeneration
+# Load pre-trained model and tokenizer
+model_name = "facebook/blenderbot-400M-distill"
+tokenizer = BlenderbotTokenizer.from_pretrained(model_name)
+model = BlenderbotForConditionalGeneration.from_pretrained(model_name)
+###########################################################################
 
 
 

@@ -8,3 +8,13 @@ images=pipe(prompt=prompt,
             guidance_scale=9).images[0]
 images
 ###################################333
+google /sales force vission models
+###############################################3
+from transformers import ViTImageProcessor, ViTForImageClassification
+from PIL import Image
+import requests
+
+# Load pre-trained mod-el
+processor = ViTImageProcessor.from_pretrained("google/vit-base-patch16-224")
+model = ViTForImageClassification.from_pretrained("google/vit-base-patch16-224")]
+######################################################################################

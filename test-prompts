@@ -3,3 +3,7 @@ from google.colab import userdata
 GEMINI_API_KEY=userdata.get("geminikey")
 client=genai.Client(api_key=GEMINI_API_KEY)
 #####################################################3
+!pip install -q openai-whisper
+#!pip install -q google-genai
+!apt-get -qq install ffmpeg
+##############################################3

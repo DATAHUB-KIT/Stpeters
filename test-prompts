@@ -17,3 +17,10 @@ response = client.chat.completions.create(
 
 print(response.choices[0].message.content)
 ###########################################################################3
+from PIL import Image
+image_path = list(uploaded.keys())[0]
+
+img = Image.open(image_path)
+
+display(img)
+##################################################

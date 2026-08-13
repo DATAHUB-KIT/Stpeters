@@ -55,3 +55,38 @@ response = client.models.generate_content(
 )
 
 print(response.text)
+######################################################################################
+vs code editor streamlit gen ai application
+#####################################################################################33
+from google import genai
+import streamlit as st
+from dotenv import load_dotenv
+import os
+load_dotenv()
+api_key=os.getenv("GEMINI_API_KEY")
+client=genai.Client(api_key=api_key)
+st.title("Hello Gemini")
+
+st.write("My First Prompt Engineering Application")
+
+# Text Box
+prompt = st.text_input("Enter your prompt")
+
+# Button
+if st.button("Generate"):
+
+    if prompt:
+
+        response = client.models.generate_content(
+            model="gemini-3.5-flash",
+            contents=prompt
+        )
+
+        st.subheader("Gemini Response")
+
+        st.write(response.text)
+
+    else:
+        st.warning("Please enter a prompt.")
+    #python -m streamlit run app.py
+    #stop execution ctrl+c.py

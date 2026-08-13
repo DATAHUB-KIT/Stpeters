@@ -1,12 +1,5 @@
 from google import genai
-from dotenv import load_dotenv
-import os
-load_dotenv()
-api_key=os.getenv("GEMINI_API_KEY")
-client=genai.Client(api_key=api_key)
-response = client.models.generate_content(
-    model="gemini-3.5-flash",
-    contents="Hello"
-)
-print(response.text)
-#######################################
+from google.colab import userdata
+GEMINI_API_KEY=userdata.get("geminikey")
+client=genai.Client(api_key=GEMINI_API_KEY)
+#####################################################3
